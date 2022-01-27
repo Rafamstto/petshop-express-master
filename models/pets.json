@@ -1,21 +1,22 @@
-[{
-        "nome": "Scooby",
-        "idade": 3,
-        "sexo": "Macho"
-    },
-    {
-        "nome": "Scooby",
-        "idade": 8,
-        "sexo": "Macho"
-    },
-    {
-        "nome": "Bartholomeu",
-        "idade": 5,
-        "sexo": "Macho"
-    },
-    {
-        "nome": "Napoleão",
-        "idade": 4,
-        "sexo": "Macho"
-    }
+[
+  {
+    "nome": "Scooby",
+    "idade": 5,
+    "sexo": "Macho"
+  },
+  {
+    "nome": "Scooby",
+    "idade": 5,
+    "sexo": "Macho"
+  },
+  {
+    "nome": "Scooby",
+    "idade": 5,
+    "sexo": "Macho"
+  },
+  {
+    "nome": "João",
+    "idade": 1,
+    "sexo": "Macho"
+  }
 ]
