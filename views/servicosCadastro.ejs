@@ -2,35 +2,35 @@
 <html lang="en">
 <%- include('./partials/head'); %>
 
-	<body>
+    <body>
 
-		<%- include('./partials/header'); %>
+        <%- include('./partials/header'); %>
 
-			<main class="admin">
-				<div class="container">
-					<h1>Painel Administrativo</h1>
-					<a href=""> voltar para lista de serviços</a>
+            <main class="admin">
+                <div class="container">
+                    <h1>Painel Administrativo</h1>
+                    <a href=""> voltar para lista de serviços</a>
 
-					<form action="" method="POST">
-						<fieldset>
-							<legend>Novo Serviço</legend>
-							<label for="nome">Nome</label>
-							<input type="text" name="nome" id="nome" required>
+                    <form action="/admin/servicos/cadastrar" method="POST">
+                        <fieldset>
+                            <legend>Novo Serviço</legend>
+                            <label for="nome">Nome</label>
+                            <input type="text" name="nome" id="nome" required>
 
-							<label for="descricao">Descrição</label>
-							<textarea name="descricao" id="descricao"></textarea>
+                            <label for="descricao">Descrição</label>
+                            <textarea name="descricao" id="descricao"></textarea>
 
-							<label for="preco">Preço</label>
-							<input type="number" name="preco" id="preco">
+                            <label for="preco">Preço</label>
+                            <input type="number" name="preco" id="preco">
 
-							<button type="submit" class="btn btn-primary">Enviar</button>
-						</fieldset>
-					</form>
-				</div>
-			</main>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </main>
 
-			<%- include('./partials/footer'); %>
+            <%- include('./partials/footer'); %>
 
-	</body>
+    </body>
 
 </html>
