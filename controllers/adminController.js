@@ -26,7 +26,7 @@ const adminController = {
 
         fs.writeFileSync(__dirname + '/../models/servicos.json', JSON.stringify(servicosModel));
 
-        res.redirect('/adimin/servicos');
+        res.redirect('/admin/servicos');
     }
 
 };

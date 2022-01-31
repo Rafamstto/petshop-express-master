@@ -1,1 +1,50 @@
-[{"id":1,"nome":"Tosa","preço":20,"descricao":"Corte de pelos","fotoURL":"/public/images/tosa.svg"},{"id":2,"nome":"Banho","preço":20,"descricao":"Corte de pelos","fotoURL":"/public/images/tosa.svg"},{"id":3,"nome":"Corte de unha","preço":20,"descricao":"Corte de pelos","fotoURL":"/public/images/tosa.svg"},{"id":"7dd4e2e2-8852-47f2-aa91-f9dbac633b5a","nome":"corte","preco":"20","descricao":"unha","fotoURL":""},{"id":"3cd60801-81f2-460a-be64-b73bd3608dd1","nome":"corte","preco":"20","descricao":"unha","fotoURL":""}]
+[{
+        "id": 1,
+        "nome": "Tosa",
+        "preco": 20,
+        "descricao": "Corte de pelos",
+        "fotoURL": "/public/images/tosa.svg"
+    },
+    {
+        "id": 2,
+        "nome": "Banho",
+        "preco": 20,
+        "descricao": "Corte de pelos",
+        "fotoURL": "/public/images/tosa.svg"
+    },
+    {
+        "id": 3,
+        "nome": "Corte de unha",
+        "preco": 20,
+        "descricao": "Corte de pelos",
+        "fotoURL": "/public/images/tosa.svg"
+    },
+    {
+        "id": "7dd4e2e2-8852-47f2-aa91-f9dbac633b5a",
+        "nome": "corte",
+        "preco": "20",
+        "descricao": "unha",
+        "fotoURL": ""
+    },
+    {
+        "id": "3cd60801-81f2-460a-be64-b73bd3608dd1",
+        "nome": "corte",
+        "preco": "20",
+        "descricao": "unha",
+        "fotoURL": ""
+    },
+    {
+        "id": "afa7dda7-a115-40f0-b9b4-aba3e93024ac",
+        "nome": "corte",
+        "preco": "20",
+        "descricao": "qwgwgswd",
+        "fotoURL": ""
+    },
+    {
+        "id": "d03428ca-9a40-4315-bb24-e06e748b4c3c",
+        "nome": "sdvlkw ",
+        "preco": "10000",
+        "descricao": "alksdnokwnbopiwng",
+        "fotoURL": ""
+    }
+]
