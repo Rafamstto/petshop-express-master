@@ -39,7 +39,7 @@ const adminController = {
     update: function(req, res) {
         const { id } = req.params;
 
-        const { nome, preco, descricao } = req.body;
+        const { nome, preco, descricao, fotoURL } = req.body;
 
         const servico = servicosModel.find(servico => servico.id === id);
 
@@ -47,10 +47,15 @@ const adminController = {
         servico.preco = preco;
         servico.descricao = descricao;
 
+        if (req.file) {
+            servico.fotoURL = req.file.filename;
+        }
         fs.writeFileSync(__dirname + '/../models/servicos.json', JSON.stringify(servicosModel));
 
         res.redirect('/admin/servicos');
-    }
+    },
+
+
 };
 
 module.exports = adminController;

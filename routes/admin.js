@@ -21,10 +21,10 @@ router.get('/servicos', adminController.buscarServicos);
 
 router.get('/servicos/cadastrar', adminController.cadastrarServicos);
 
-router.post('/servicos/cadastrar', upload.single('ilustacao'), adminController.store);
+router.post('/servicos/cadastrar', upload.single('ilustracao'), adminController.store);
 
 router.get('/servicos/:id/editar', adminController.editarServicos);
 
-router.put('/servicos/:id/editar', adminController.update);
+router.put('/servicos/:id/editar', upload.single('ilustracao'), adminController.update);
 
 module.exports = router;
