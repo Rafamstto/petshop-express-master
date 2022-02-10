@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
+const session = require('express-session');
 
 const indexRouter = require('./routes/index');
 const petsRouter = require('./routes/pets');
@@ -12,6 +13,7 @@ const sobreRouter = require('./routes/sobre');
 const loginRouter = require('./routes/login');
 const contatoRouter = require('./routes/contato');
 const adminRouter = require('./routes/admin');
+const cadastroRouter = require('./routes/cadastro');
 
 const app = express();
 
@@ -26,6 +28,7 @@ app.use(cookieParser());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
+app.use(session({ secret: "123456789" }));
 
 app.use(indexRouter);
 app.use('/pets', petsRouter);
@@ -34,6 +37,7 @@ app.use('/sobre', sobreRouter);
 app.use('/login', loginRouter);
 app.use('/contato', contatoRouter);
 app.use('/admin', adminRouter);
+app.use('/cadastro', cadastroRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
