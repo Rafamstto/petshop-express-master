@@ -1,39 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<%- include('./partials/head'); %>
+<%- include('./partials/header'); %>
+<main class="admin">
+    <div class="container">
+        <h1>Painel Administrativo</h1>
+        <a href="/admin/servicos"> voltar para lista de serviços</a>
 
-    <body>
+        <form action="/admin/servicos/cadastro" method="POST" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Novo Serviço</legend>
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" required>
 
-        <%- include('./partials/header'); %>
+                <label for="descricao">Descrição</label>
+                <textarea name="descricao" id="descricao"></textarea>
 
-            <main class="admin">
-                <div class="container">
-                    <h1>Painel Administrativo</h1>
-                    <a href=""> voltar para lista de serviços</a>
+                <label for="preco">Preço</label>
+                <input type="number" name="preco" id="preco">
 
-                    <form action="/admin/servicos/cadastrar" enctype="multipart/form-data" method="POST">
-                        <fieldset>
-                            <legend>Novo Serviço</legend>
-                            <label for="nome">Nome</label>
-                            <input type="text" name="nome" id="nome" required>
+                <label for="ilustracao">Ilustração</label>
+                <input type="file" name="ilustracao" id="ilustracao">
 
-                            <label for="descricao">Descrição</label>
-                            <textarea name="descricao" id="descricao"></textarea>
-
-                            <label for="preco">Preço</label>
-                            <input type="number" name="preco" id="preco">
-
-                            <label for="ilustracao">Ilustração</label>
-                            <input type="file" name="ilustracao" id="ilustracao">
-
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                        </fieldset>
-                    </form>
-                </div>
-            </main>
-
-            <%- include('./partials/footer'); %>
-
-    </body>
-
-</html>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </fieldset>
+        </form>
+    </div>
+</main>
+<%- include('./partials/footer'); %>

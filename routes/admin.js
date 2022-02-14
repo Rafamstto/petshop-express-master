@@ -1,30 +1,46 @@
-const express = require('express');
-const adminController = require('../controllers/adminController');
-const router = express.Router();
-const multer = require('multer');
-const path = require('path');
+const express = require('express'); // chama modulo express
+const multer = require('multer'); // chama modulo multer (upload)
+const path = require('path'); // chama modulo path (caminho de arquivos)
+const router = express.Router(); // chama metodo que gerencia rotas
+const servicosController = require('../controllers/servicosController');
+const validaCadastroServico = require('../middlewares/validacao/servico');
 
+/** configurações do multer */
 const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        cb(null, path.resolve('uploads'));
+    /** destino do upload */
+    destination: (req, file, cb) => {
+        /** guarda arquivos na pasta /uploads */
+        cb(null, path.join('uploads'));
     },
-    filename: function(req, file, cb) {
+    /** nome do upload */
+    filename: (req, file, cb) => {
+        /** salva arquivo com nome do campo + data e hora + extensão */
         cb(null, file.fieldname + Date.now() + path.extname(file.originalname));
     }
 });
 
-const upload = multer({ storage });
+/** usando configuração como storage do multer */
+const upload = multer({ storage: storage });
 
-router.get('/', adminController.index);
+/* http://localhost:3000/admin */
+router.get('/', (request, response) => {
+    response.render('admin', { titulo: 'Painel Administrativo' });
+});
 
-router.get('/servicos', adminController.buscarServicos);
+/* http://localhost:3000/admin/servicos */
+router.get('/servicos', servicosController.index);
 
-router.get('/servicos/cadastrar', adminController.cadastrarServicos);
+/* http://localhost:3000/admin/servicos/cadastro */
+router.get('/servicos/cadastro', servicosController.cadastro);
 
-router.post('/servicos/cadastrar', upload.single('ilustracao'), adminController.store);
+/* http://localhost:3000/admin/servicos/cadastro */
+router.post('/servicos/cadastro', upload.single('ilustracao'), validaCadastroServico, servicosController.salvar);
 
-router.get('/servicos/:id/editar', adminController.editarServicos);
+/* http://localhost:3000/admin/servicos/editar */
+router.get('/servicos/editar/:id', servicosController.editar);
 
-router.put('/servicos/:id/editar', upload.single('ilustracao'), adminController.update);
+/* http://localhost:3000/admin/servicos/editar/:id/?_method=PUT */
+router.put('/servicos/editar/:id', upload.single('ilustracao'), validaCadastroServico, servicosController.atualizar);
 
+/* exporta as rotas */
 module.exports = router;
