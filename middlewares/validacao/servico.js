@@ -2,7 +2,7 @@
 const servico = (request, response, next) => {
     let { nome, preco, descricao } = request.body;
 
-    if ( nome == "" ||  preco == "" || descricao == "" ) {
+    if (nome == "" || preco == "" || descricao == "") {
         // retorna mensagem e erro
         response.send("Preencha todos os campos obrigatórios!");
         // response.render("servicoCadastro", { erro: 'Preencha todos os campos obrigatórios!' });
